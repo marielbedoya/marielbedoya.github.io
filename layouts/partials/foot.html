@@ -1,0 +1,31 @@
+{{/*
+  Project-level override of themes/academimal/layouts/partials/foot.html.
+  Identical to the theme's, except the theme calls the old
+  "_internal/google_analytics_async.html" template, which Hugo removed after
+  v0.120. This version uses the current internal template and only emits it when
+  services.googleAnalytics.ID is set in config.toml (it is not, by default),
+  so the site builds on modern Hugo.
+*/}}
+      <footer>
+      </footer>
+    </div>
+    <script src="{{ "js/scale.fix.js" | relURL }}"></script>
+    {{ with site.Config.Services.GoogleAnalytics.ID }}{{ template "_internal/google_analytics.html" $ }}{{ end }}
+    <script>
+		function toggle(pid) {
+            objid = "pubabs_" + pid.toString();
+            linkid = "pubabslink_" + pid.toString();
+            absobj = document.getElementById(objid);
+            linkobj = document.getElementById(linkid);
+			if (absobj.style.display === "none") {
+				absobj.style.display = "inline";
+                linkobj.style.display = "none";
+			}
+			else {
+				absobj.style.display = "none";
+                linkobj.style.display = "inline";
+            }
+		}
+	</script>
+  </body>
+</html>

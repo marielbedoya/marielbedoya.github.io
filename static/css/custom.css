@@ -1,0 +1,77 @@
+/* Additions on top of the academimal theme's css/style.css.
+   Loaded after it, so anything here wins.
+
+   PALETTE
+   The theme ships a blue (#267CB9) for links. These rules replace it with the
+   green from the site's monogram, so the favicon and the page agree.
+
+   The accent is chosen on TWO axes, not one. Contrast against the white
+   background keeps it readable; distance from the black body text around it
+   keeps it recognisable as a link. An earlier, darker green scored better on
+   the first axis but much worse on the second, and read as tinted black:
+
+     colour                  vs white   dE vs body text   chroma
+     #267CB9  (old blue)       4.50:1        63.5          39.4
+     #2f6b5a  (rejected)       6.23:1        47.7          24.3
+     #0f7b5f  (in use)         5.23:1        58.3          36.2
+
+   So --accent beats the old blue on background contrast AND keeps nearly all
+   of its separation from body text.
+
+     --accent        #0f7b5f   5.23:1 on white   passes AA
+     --accent-hover  #0a5a45   8.20:1 on white   passes AAA
+
+   The favicon uses #0c5f49 — the same hue darkened — because it sets white
+   type on a solid ground and needs more depth than text on white does.
+
+   Note: #51a08c, the green used on the old Squarespace site, measures 3.11:1
+   and FAILS AA. Don't reintroduce it for text. It is fine for large display
+   type or as a background behind white, which is what the favicon does. */
+
+:root {
+    --accent:        #0f7b5f;
+    --accent-hover:  #0a5a45;
+    --rule:          #e5e5e5;
+}
+
+/* Links ------------------------------------------------------------------ */
+a {
+    color: var(--accent);
+}
+
+a:hover,
+a:focus {
+    color: var(--accent-hover);
+}
+
+/* Keyboard focus needs to be visible, not just a colour change. */
+a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* Sidebar ---------------------------------------------------------------- */
+/* The name is the one place the accent carries identity rather than
+   signalling "click me", mirroring the green page titles on the old site. */
+header h1 {
+    color: var(--accent);
+}
+
+/* Separate the CV/contact links from the section nav above them. */
+.sidebar-links {
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid var(--rule);
+}
+
+/* Body ------------------------------------------------------------------- */
+/* Keep long abstracts comfortable to read. */
+section p {
+    text-align: left;
+}
+
+/* The "(click to expand)" abstract toggles read better a touch lighter. */
+[id^="pubabslink_"] {
+    font-size: 0.9em;
+}

@@ -1,0 +1,27 @@
+{{/*
+  Project-level override of themes/academimal/layouts/partials/sidebar.html.
+  Keep the order here in sync with layouts/index.html.
+  Each link only appears if the matching section has content.
+*/}}
+<p class="contactinfo"><a href="{{ "#bio" | relURL }}">Bio</a></p>
+{{ with .Site.Data.job_market_paper }}
+<p class="contactinfo"><a href="{{ "#jobmarketpaper" | relURL }}">Job Market Paper</a></p>
+{{ end }}
+{{ with .Site.Data.publications }}
+<p class="contactinfo"><a href="{{ "#publications" | relURL }}">Publications</a></p>
+{{ end }}
+{{ with .Site.Data.working_papers }}
+<p class="contactinfo"><a href="{{ "#workingpapers" | relURL }}">Working Papers</a></p>
+{{ end }}
+{{ with .Site.Data.work_in_progress }}
+<p class="contactinfo"><a href="{{ "#workinprogress" | relURL }}">Work in Progress</a></p>
+{{ end }}
+{{ with .Site.Data.policy_work }}
+<p class="contactinfo"><a href="{{ "#policywork" | relURL }}">Policy Work</a></p>
+{{ end }}
+{{ with .GetPage "/sections/teaching.md" }}
+<p class="contactinfo"><a href="{{ "#teaching" | relURL }}">Teaching</a></p>
+{{ end }}
+{{ with .GetPage "/sections/contact.md" }}
+<p class="lastcontactinfo"><a href="{{ "#contact" | relURL }}">Contact</a></p>
+{{ end }}

@@ -1,0 +1,22 @@
+relativeURLs = true
+title = "Mariel Bedoya"
+theme = "academimal"
+sectionPagesMenu = "main"
+defaultContentLanguage = "en"
+
+[params]
+    shortbio = "Ph.D. Candidate in Economics and Education, Columbia University"
+
+    # Photo shown in the sidebar. The file lives in content/ (i.e. content/mariel.jpg).
+    logo = "mariel.jpg"
+
+    # Sidebar contact links. Leave a value empty ("") to hide that link.
+    email    = "mrb2285@tc.columbia.edu"
+    profile  = "https://www.tc.columbia.edu/doctoral-student-profiles/profiles/mrb2285.php"
+    scholar  = "https://scholar.google.com/citations?user=duq9GvYAAAAJ&hl=es"
+    linkedin = "https://www.linkedin.com/in/mariel-bedoya-9b145249/"
+
+    # CV link. Currently the Dropbox link from the old site.
+    # RECOMMENDED: drop the PDF at static/pdf/CV_MarielBedoya.pdf and change this
+    # to "/pdf/CV_MarielBedoya.pdf" so the CV is served from your own domain.
+    cv = "/pdf/CV_MarielBedoya.pdf"

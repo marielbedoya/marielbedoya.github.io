@@ -1,0 +1,59 @@
+{{/*
+  Project-level override of themes/academimal/layouts/partials/header.html.
+  Same as the theme's, plus a block of contact/CV links under the section nav
+  (values come from [params] in config.toml) and a few page-title/SEO tags.
+*/}}
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{{ .Site.Title }}{{ with .Site.Params.shortbio }} | {{ . }}{{ end }}</title>
+        <meta name="description" content="{{ .Site.Params.shortbio }}">
+        <meta name="author" content="{{ .Site.Title }}">
+        <link rel="stylesheet" href="{{ "/css/style.css" | relURL }}">
+        <link rel="stylesheet" href="{{ "/css/custom.css" | relURL }}">
+        <link rel="icon" type="image/x-icon" href="{{ "/favicon.ico" | relURL }}">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ "/apple-touch-icon.png" | relURL }}">
+    </head>
+    <body>
+        <div class="wrapper">
+            <header>
+                <h1>{{ .Site.Title }}</h1>
+
+                <!-- begin short bio -->
+                <p>{{ .Site.Params.shortbio }}</p>
+                <!-- end short bio -->
+
+                <hr/>
+
+                {{ partial "sidebar.html" . }}
+
+                <!-- begin contact / CV links -->
+                <div class="sidebar-links">
+                {{ with .Site.Params.cv }}
+                <p class="contactinfo"><a href="{{ . }}" target="_blank" rel="noopener">Curriculum Vitae</a></p>
+                {{ end }}
+                {{ with .Site.Params.email }}
+                <p class="contactinfo"><a href="mailto:{{ . }}">{{ . }}</a></p>
+                {{ end }}
+                {{ with .Site.Params.scholar }}
+                <p class="contactinfo"><a href="{{ . }}" target="_blank" rel="noopener">Google Scholar</a></p>
+                {{ end }}
+                {{ with .Site.Params.linkedin }}
+                <p class="contactinfo"><a href="{{ . }}" target="_blank" rel="noopener">LinkedIn</a></p>
+                {{ end }}
+                {{ with .Site.Params.profile }}
+                <p class="lastcontactinfo"><a href="{{ . }}" target="_blank" rel="noopener">Columbia profile</a></p>
+                {{ end }}
+                </div>
+                <!-- end contact / CV links -->
+
+                <!-- begin photo -->
+                {{ with .Site.Params.logo }}
+                <img src="{{ . | relURL }}" alt="{{ $.Site.Title }}" />
+                {{ end }}
+                <!-- end photo -->
+
+            </header>

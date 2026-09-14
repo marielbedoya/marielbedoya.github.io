@@ -1,0 +1,92 @@
+{{ define "main" -}}
+{{/*
+  Project-level override of themes/academimal/layouts/index.html.
+  Hugo prefers this file over the theme's, so the theme submodule stays untouched
+  and can still be updated from upstream.
+
+  Section order (job market paper first, deliberately):
+    Bio -> Job Market Paper -> Publications -> Working Papers
+        -> Work in Progress -> Policy Work -> Teaching -> Contact
+
+  To reorder, move the blocks below AND the matching links in
+  layouts/partials/sidebar.html so the two stay in sync.
+  A section disappears automatically when its file or data directory is empty.
+*/}}
+
+<h2 id="bio">Bio</h2>
+{{ with .GetPage "/sections/aboutme.md" }}
+{{ .Content }}
+{{ end }}
+
+{{ $scratch := newScratch }}
+{{ $scratch.Set "pubcnt" 0 }}
+
+{{ with .Site.Data.job_market_paper }}
+<hr>
+<h2 id="jobmarketpaper">Job Market Paper</h2>
+{{ range . }}
+{{ range .works }}
+{{ partial "publication.html" (dict "context" . "pid" ($scratch.Get "pubcnt")) }}
+{{ $scratch.Add "pubcnt" 1 }}
+{{ end }}
+{{ end }}
+{{ end }}
+
+{{ with .Site.Data.publications }}
+<hr>
+<h2 id="publications">Publications</h2>
+{{ range . }}
+{{ range .works }}
+{{ partial "publication.html" (dict "context" . "pid" ($scratch.Get "pubcnt")) }}
+{{ $scratch.Add "pubcnt" 1 }}
+{{ end }}
+{{ end }}
+{{ end }}
+
+{{ with .Site.Data.working_papers }}
+<hr>
+<h2 id="workingpapers">Working Papers</h2>
+{{ range . }}
+{{ range .works }}
+{{ partial "publication.html" (dict "context" . "pid" ($scratch.Get "pubcnt")) }}
+{{ $scratch.Add "pubcnt" 1 }}
+{{ end }}
+{{ end }}
+{{ end }}
+
+{{ with .Site.Data.work_in_progress }}
+<hr>
+<h2 id="workinprogress">Work in Progress</h2>
+{{ range . }}
+{{ range .works }}
+{{ partial "publication.html" (dict "context" . "pid" ($scratch.Get "pubcnt")) }}
+{{ $scratch.Add "pubcnt" 1 }}
+{{ end }}
+{{ end }}
+{{ end }}
+
+{{ with .Site.Data.policy_work }}
+<hr>
+<h2 id="policywork">Policy Work</h2>
+{{ range . }}
+{{ range .works }}
+{{ partial "publication.html" (dict "context" . "pid" ($scratch.Get "pubcnt")) }}
+{{ $scratch.Add "pubcnt" 1 }}
+{{ end }}
+{{ end }}
+{{ end }}
+
+{{ with .GetPage "/sections/teaching.md" }}
+<hr>
+<h2 id="teaching">Teaching</h2>
+{{ .Content }}
+{{ end }}
+
+{{ with .GetPage "/sections/contact.md" }}
+<hr>
+<h2 id="contact">Contact</h2>
+{{ .Content }}
+{{ end }}
+
+{{ .Content }}
+{{- end }}
