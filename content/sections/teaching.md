@@ -1,3 +1,7 @@
+---
+# Set to false (or delete this line) to show the Teaching section again.
+draft: true
+---
 __Columbia University — Teaching Assistant__  
 Microeconomic Theory with Applications to Education (Fall 2022) — graduate level  
 Education & Economic Development (Spring 2023) — graduate level  
