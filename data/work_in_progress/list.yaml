@@ -1,6 +1,40 @@
 works:
-- title: "What Schools Teach Beyond Academics: Gendered Language in School Curricula"
+- title: "Schools Beyond Academics: Gender Equality and Sex Education in School Curricula"
   coauthors: "Alejandra Quintana"
+  abstract: >
+    Governments increasingly use school curricula to promote gender 
+    equality, yet these reforms face growing opposition, and evidence on whether 
+    national curricula can change gender norms remains scarce. We study Peru’s 2016 
+    National Curriculum, which made gender equality a guiding principle of basic 
+    education, introduced comprehensive sexuality education, and reached public 
+    schools through new textbooks despite organized resistance from a conservative 
+    parents’ movement. We exploit variation in textbook delivery across grades within 
+    public schools, and compare public with private schools, which did not receive 
+    the textbooks. Preliminary evidence shows that the reform changed what students 
+    were taught: in fourth-grade civics textbooks, the gap between references to men 
+    and women fell from 85% to 10%, and women became more associated with science 
+    and men with family. In public-school grades that received at least half of the 
+    reform textbooks, reported cases of sexual violence against girls fell by about 
+    two-thirds relative to the pre-reform mean, compared with grades that received 
+    fewer textbooks, while physical and psychological violence did not change. School 
+    switching did not differ between these grades but increased in public relative to 
+    private schools in the reform year, consistent with backlash against the public 
+    school system rather than the textbooks themselves. 
 
-- title: "Targeting Shortages: The Effects of Compulsory Rural Service on Maternal and Infant Health in Peru"
-  coauthors: "Sarita Ore"
+- title: "Redesigning Gateway Science: The Effects of Ohio’s Strong Start in Science Initiative on Student Success"
+  coauthors: "Veronica Minaya"
+  note: "Status: Data collection ongoing."
+  abstract: >
+    Introductory biology, chemistry, and anatomy and physiology courses are a major 
+    point of attrition for students pursuing STEM and healthcare degrees. Ohio Strong 
+    Start in Science (OhioSSS), led by the Ohio Department of Higher Education, 
+    supports public colleges as they revisit placement, redesign curricula, and add 
+    academic supports, including corequisite models, in these gateway courses. This 
+    project evaluates how these redesigns shape students’ success in gateway courses 
+    and their subsequent progression toward STEM and healthcare credentials. 
+  links:
+  - url: https://ccrc.tc.columbia.edu/research-project/ohio-strong-start-science.html
+    text: "Ohio Strong Start in Science Initiative"
+
+#- title: "Targeting Shortages: The Effects of Temporary Service Programs on Health Outcomes in Peru"
+#  coauthors: "Sarita Ore"
