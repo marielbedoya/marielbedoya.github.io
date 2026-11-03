@@ -4,19 +4,19 @@
   Each link only appears if the matching section has content.
 */}}
 <p class="contactinfo"><a href="{{ "#bio" | relURL }}">Bio</a></p>
-{{ with .Site.Data.job_market_paper }}
+{{ with hugo.Data.job_market_paper }}
 <p class="contactinfo"><a href="{{ "#jobmarketpaper" | relURL }}">Job Market Paper</a></p>
 {{ end }}
-{{ with .Site.Data.publications }}
+{{ with hugo.Data.publications }}
 <p class="contactinfo"><a href="{{ "#publications" | relURL }}">Publications</a></p>
 {{ end }}
-{{ with .Site.Data.working_papers }}
+{{ with hugo.Data.working_papers }}
 <p class="contactinfo"><a href="{{ "#workingpapers" | relURL }}">Working Papers</a></p>
 {{ end }}
-{{ with .Site.Data.work_in_progress }}
+{{ with hugo.Data.work_in_progress }}
 <p class="contactinfo"><a href="{{ "#workinprogress" | relURL }}">Work in Progress</a></p>
 {{ end }}
-{{ with .Site.Data.policy_work }}
+{{ with hugo.Data.policy_work }}
 <p class="contactinfo"><a href="{{ "#policywork" | relURL }}">Policy Work</a></p>
 {{ end }}
 {{ with .GetPage "/sections/teaching.md" }}

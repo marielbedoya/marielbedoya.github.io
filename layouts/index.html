@@ -21,7 +21,7 @@
 {{ $scratch := newScratch }}
 {{ $scratch.Set "pubcnt" 0 }}
 
-{{ with .Site.Data.job_market_paper }}
+{{ with hugo.Data.job_market_paper }}
 <hr>
 <h2 id="jobmarketpaper">Job Market Paper</h2>
 {{ range . }}
@@ -32,7 +32,7 @@
 {{ end }}
 {{ end }}
 
-{{ with .Site.Data.publications }}
+{{ with hugo.Data.publications }}
 <hr>
 <h2 id="publications">Publications</h2>
 {{ range . }}
@@ -43,7 +43,7 @@
 {{ end }}
 {{ end }}
 
-{{ with .Site.Data.working_papers }}
+{{ with hugo.Data.working_papers }}
 <hr>
 <h2 id="workingpapers">Working Papers</h2>
 {{ range . }}
@@ -54,7 +54,7 @@
 {{ end }}
 {{ end }}
 
-{{ with .Site.Data.work_in_progress }}
+{{ with hugo.Data.work_in_progress }}
 <hr>
 <h2 id="workinprogress">Work in Progress</h2>
 {{ range . }}
@@ -65,7 +65,7 @@
 {{ end }}
 {{ end }}
 
-{{ with .Site.Data.policy_work }}
+{{ with hugo.Data.policy_work }}
 <hr>
 <h2 id="policywork">Policy Work</h2>
 {{ range . }}
