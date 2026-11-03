@@ -19,9 +19,9 @@
 {{ with hugo.Data.policy_work }}
 <p class="contactinfo"><a href="{{ "#policywork" | relURL }}">Policy Work</a></p>
 {{ end }}
-{{ with .GetPage "/sections/teaching.md" }}
+{{ with .GetPage "/sections/teaching.md" }}{{ if not .Params.hidden }}
 <p class="contactinfo"><a href="{{ "#teaching" | relURL }}">Teaching</a></p>
-{{ end }}
+{{ end }}{{ end }}
 {{ with .GetPage "/sections/contact.md" }}
 <p class="lastcontactinfo"><a href="{{ "#contact" | relURL }}">Contact</a></p>
 {{ end }}

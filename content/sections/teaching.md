@@ -1,6 +1,6 @@
 ---
 # Set to false (or delete this line) to show the Teaching section again.
-draft: true
+hidden: true
 ---
 __Columbia University — Teaching Assistant__  
 Microeconomic Theory with Applications to Education (Fall 2022) — graduate level  

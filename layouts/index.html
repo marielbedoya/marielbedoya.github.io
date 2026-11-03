@@ -18,6 +18,14 @@
 {{ .Content }}
 {{ end }}
 
+{{/* Email / CV links in one row under the bio (values from [params] in config.toml). */}}
+<p class="bio-links">
+{{- with .Site.Params.email }}<a href="mailto:{{ . }}">{{ . }}</a>{{ end }}
+{{ with .Site.Params.cv }}<a href="{{ . }}" target="_blank" rel="noopener">CV</a>{{ end }}
+{{ with .Site.Params.scholar }}<a href="{{ . }}" target="_blank" rel="noopener">Google Scholar</a>{{ end }}
+{{ with .Site.Params.linkedin }}<a href="{{ . }}" target="_blank" rel="noopener">LinkedIn</a>{{ end -}}
+</p>
+
 {{ $scratch := newScratch }}
 {{ $scratch.Set "pubcnt" 0 }}
 
@@ -76,11 +84,11 @@
 {{ end }}
 {{ end }}
 
-{{ with .GetPage "/sections/teaching.md" }}
+{{ with .GetPage "/sections/teaching.md" }}{{ if not .Params.hidden }}
 <hr>
 <h2 id="teaching">Teaching</h2>
 {{ .Content }}
-{{ end }}
+{{ end }}{{ end }}
 
 {{ with .GetPage "/sections/contact.md" }}
 <hr>

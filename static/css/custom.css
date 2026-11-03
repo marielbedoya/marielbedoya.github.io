@@ -58,14 +58,20 @@ header h1 {
     color: var(--accent);
 }
 
-/* Separate the CV/contact links from the section nav above them. */
-.sidebar-links {
-    margin-top: 18px;
-    padding-top: 14px;
-    border-top: 1px solid var(--rule);
+/* Photo sits between the short bio and the section nav. */
+.sidebar-photo {
+    display: block;
 }
 
 /* Body ------------------------------------------------------------------- */
+/* CV / email / Scholar / LinkedIn in one row under the bio, wrapping on
+   narrow screens. */
+.bio-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 3em;
+}
+
 /* Keep long abstracts comfortable to read. */
 section p {
     text-align: left;
